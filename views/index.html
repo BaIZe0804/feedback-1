@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FeedBack</title>
+    <link rel="stylesheet" href="/public/lib/bootstrap.min.css">
+                                <!--url 地址  -->
+    <style>
+        .list-group li:hover{
+            background-color: rgb(207, 208, 209);
+        }
+    </style>
+</head>
+<body>
+    <div class="panel-header" style="margin: 0 30px;">
+        <div class="page-header">
+            <h1 style="margin: 5px 50px;">反馈&nbsp;&nbsp;<small>列表</small></h1>
+            <a href="post.html"><button class="btn btn-success form-control"> 发表</button></a>
+        </div>
+    </div>
+    <div class="panel-body table-responsive">
+        <ul class="list-group">
+            {{each comments}}
+            <li class="list-group-item">{{ $value.name }}说：{{ $value.message }} <span class="pull-right">{{ $value.dataTime }}</span></li>
+            
+            {{/each}}
+        </ul>
+    </div>
+</body>
+</html>
